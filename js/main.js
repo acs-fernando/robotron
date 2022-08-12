@@ -34,6 +34,10 @@ const pecas = {
   }
 }
 
+const selecionaCor = document.querySelector('#seleciona-cor')
+
+selecionaCor.addEventListener('change', (evento) => atualizaCor(evento.target.value))
+
 controle.forEach((elemento) => {
   elemento.addEventListener('click', (evento) => {
     manipulaDados(evento.target.dataset.controle, evento.target.parentNode)
@@ -51,10 +55,13 @@ function manipulaDados(operacao, controle) {
 }
 
 function atualizaEstatisticas(peca) {
-  console.log(pecas[peca])
-
   estatisticas.forEach((elemento) => {
     console.log(elemento.textContent)
     elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]
   })
+}
+
+function atualizaCor(cor) {
+  const robotron = document.querySelector('#robotron')
+  robotron.setAttribute('src', `img/${cor}/robotron.png`)
 }

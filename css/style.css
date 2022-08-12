@@ -198,6 +198,15 @@ main {
     margin: 0;
 }
 
+.div-seleciona-cor {
+    position: absolute;
+    top: 500px;
+}
+
+.div-seleciona-cor label {
+    display: block;
+}
+
 .estatistica:nth-child(2n) .estatistica-titulo {
     order: 2;
     text-align: right;
